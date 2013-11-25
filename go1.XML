@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>go1</name>
+    </assembly>
+    <members>
+        <member name="T:go1.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:go1.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:go1.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Go_WinApp.StoneColor">
+            <summary>
+            The Black color and the white color
+            </summary>
+        </member>
+        <member name="T:Go_WinApp.GoBoard">
+            <summary>
+            The Controller and Viewer
+            </summary>
+        </member>
+        <member name="F:Go_WinApp.GoBoard.components">
+            <value>
+            The components of the UI
+            Like the button and textbox
+            </value>
+        </member>
+        <member name="M:Go_WinApp.GoBoard.#ctor(System.Int32)">
+            <summary>
+            Create a Board with the provided size
+            </summary>
+            <param name="nSize">19 lines is a normal one</param>
+        </member>
+        <member name="M:Go_WinApp.GoBoard.playNext(Go_WinApp.GoMove@)">
+            <summary>
+            Play the next move
+            Show on the screen
+            </summary>
+            <param name="gm"></param>
+        </member>
+        <member name="M:Go_WinApp.GoBoard.playPrev(Go_WinApp.GoMove)">
+            <summary>
+            Play the previous move
+            </summary>
+            <param name="gm"></param>
+        </member>
+        <member name="M:Go_WinApp.GoBoard.drawStone(System.Drawing.Graphics,System.Int32,System.Int32,Go_WinApp.StoneColor)">
+            Draw the stone in a position with the certain color.
+        </member>
+        <member name="M:Go_WinApp.GoBoard.OpenFile">
+            Load the sgf file to show the chess manual.
+        </member>
+        <member name="T:Go_WinApp.Spot">
+            <summary>
+            The every spot in chess board
+            It has many properties like emptity/deadlive/scan/update
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.Spot.setStone(Go_WinApp.StoneColor)">
+            <summary>
+            Put the stone with the color c on the board
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:Go_WinApp.Spot.removeStone">
+            <summary>
+            Remove the stone on the board
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.Spot.die">
+            <summary>
+            Kill some stones
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.Spot.isUpdated">
+            <summary>
+            Judge the spot if it's going to update
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Go_WinApp.Spot.setUpdated">
+            <summary>
+            This spot is going to update
+            </summary>
+        </member>
+        <member name="T:Go_WinApp.GoMove">
+            <summary>
+            The every move means every turn in the real game
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.GoMove.#ctor(System.Int32,System.Int32,Go_WinApp.StoneColor,System.Int32)">
+            <summary>
+            Create a new move with the (x,y) and color 
+            </summary>
+            <param name="x">The row to put</param>
+            <param name="y">The col to put</param>
+            <param name="sc">The color to put</param>
+            <param name="seq"></param>
+        </member>
+        <member name="M:Go_WinApp.GoMove.#ctor(System.String,Go_WinApp.StoneColor)">
+            <summary>
+            Create a new move with the string and color
+            Like "AH" will be changed to (0, 8)
+            </summary>
+            <param name="str">It stands for the point</param>
+            <param name="c">The color to put</param>
+        </member>
+        <member name="T:Go_WinApp.MoveResult">
+            <summary>
+            It seems that this class doesn't make any sense
+            </summary>
+        </member>
+        <member name="T:Go_WinApp.Stone">
+            <summary>
+            Yup! It's a unuseless one
+            </summary>
+        </member>
+        <member name="T:Go_WinApp.GoVariation">
+            <summary>
+            The class controls the moves
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.GoVariation.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Go_WinApp.GoVariation.addAMove(Go_WinApp.GoMove)">
+            <summary>
+            When a move completes, we add it to store it
+            </summary>
+            <param name="gm"></param>
+        </member>
+        <member name="M:Go_WinApp.GoVariation.doNext">
+            <summary>
+            Return a move that will play next
+            </summary>
+            <returns>The move which is going to play in next</returns>
+        </member>
+        <member name="M:Go_WinApp.GoVariation.doPrev">
+            <summary>
+            Return a move that will play back
+            </summary>
+            <returns>The move which is goint to play in back</returns>
+        </member>
+        <member name="M:Go_WinApp.GoVariation.peekNext">
+            <summary>
+            Actually I don't know what this method is going to do
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Go_WinApp.GoVariation.reset">
+            <summary>
+            Reset the counter
+            </summary>
+        </member>
+        <member name="T:Go_WinApp.GameInfo">
+            <summary>
+            Some information about the game
+            like the name,player,date and so on.
+            </summary>
+        </member>
+        <member name="T:Go_WinApp.KeyValuePair">
+            <summary>
+            Key means the type
+            Value means the concrete value
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.KeyValuePair.#ctor(System.String,System.String)">
+            <summary>
+            The template of "A[B]".
+            A is key, and B is value.
+            </summary>
+            <param name="k">k is key</param>
+            <param name="v">v is value</param>
+        </member>
+        <member name="T:Go_WinApp.GoTree">
+            <summary>
+            The Tree hands many moves by controlling the GoVariation class
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.GoTree.#ctor(System.String)">
+            <summary>
+            Create a GoTree with string
+            The string refers to the text of a file
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:Go_WinApp.GoTree.#ctor">
+            <summary>
+            Create a GoTree with nothing
+            And that means no moves are created at the same time
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.GoTree.parseFile(System.String)">
+            <summary>
+            Create some moves from the file.
+            </summary>
+            <param name="goStr">the file's text</param>
+        </member>
+        <member name="M:Go_WinApp.GoTree.parseASection(System.String)">
+            <summary>
+            It's a main function of void parseFile(String).
+            Create some moves from the certain parts.
+            </summary>
+            <param name="sec"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Go_WinApp.GoTest">
+            <summary>
+            The class to start
+            </summary>
+        </member>
+        <member name="M:Go_WinApp.GoTest.Main(System.String[])">
+            <summary>
+            The Entrance of the program.
+            </summary>
+            <param name="args">The arguments provided when it starts.</param>
+        </member>
+    </members>
+</doc>
